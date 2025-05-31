@@ -7,8 +7,8 @@ export default function Navbar() {
     {/* Logo */}
     <img
       className="h-12 w-auto"
-      src="assets/logo.jpg"
-      alt="BEF Logo"
+      src="BEF image.png"
+      
     />
 
     {/* Links */}
