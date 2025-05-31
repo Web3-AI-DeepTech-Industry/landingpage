@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+   base: '/landingpage/',
   plugins: [react(), tailwindcss()],
   server: {
     host: true, // allows access via local network (like ngrok)
