@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone, Globe } from "lucide-react"; // make sure to insta
 
 export default function ContentSections() {
   return (
-    <section className="relative z-10 px-6 py-16 space-y-24">
+    <section className="relative z-10 px-6 py-16 space-y-50">
 
       {/* About Us */}
       <div className="max-w-4xl mx-auto backdrop-blur-md bg-white/5 border border-pink-500/20 rounded-xl p-8 shadow-[0_0_20px_rgba(255,0,150,0.3)]">

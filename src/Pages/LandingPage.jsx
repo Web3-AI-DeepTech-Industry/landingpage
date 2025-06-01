@@ -13,18 +13,23 @@ export default function LandingPage() {
   const navbarRef = useRef();
 
   useEffect(() => {
+    // Set transform origin for smooth scaling
+    gsap.set(globeRef.current, { transformOrigin: 'center center' });
+
+    // Scroll animation for globe zoom-out
     gsap.timeline({
       scrollTrigger: {
         trigger: document.body,
         start: 'top top',
-        end: '70% top',
-        scrub: 2,
+        end: '100% top',
+        scrub: 1,
       },
     }).to(globeRef.current, {
-      scale: 0.3,
-      ease: 'power2.inOut',
+      scale: 0.1,
+      ease: 'power2.out',
     });
 
+    // Navbar show/hide on scroll
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -41,11 +46,11 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="relative min-h-[200vh] bg-gray-950 text-white overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-gray-950 text-white overflow-x-hidden">
       {/* Navbar */}
       <div
         ref={navbarRef}
-        className="fixed top-0 left-0 w-full z-30 bg-gray-900 bg-opacity-90 shadow-md transform -translate-y-full"
+        className="fixed top-0 left-0 w-full z-30 bg-gray-900 bg-opacity-90 shadow-md transform -translate-y-full transition-transform"
       >
         <Navbar />
       </div>
@@ -53,7 +58,7 @@ export default function LandingPage() {
       {/* Background Globe */}
       <div
         ref={globeRef}
-        className="fixed top-1/2 left-0 w-full h-[105vh] -translate-y-1/2 z-0 flex items-center justify-center pointer-events-none"
+        className="fixed top-1/2 left-0 w-full h-[105vh] -translate-y-1/2 z-0 flex items-center justify-center pointer-events-none will-change-transform"
       >
         <div className="absolute inset-0 bg-gray-950" />
         <div className="relative w-[600px] aspect-square rounded-full overflow-hidden">
@@ -68,9 +73,13 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Sections */}
-      <HeroSection />
-      <ContentSections />
+      {/* Page Content */}
+      <main className="relative z-10 flex-grow">
+        <HeroSection />
+        <ContentSections />
+      </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
