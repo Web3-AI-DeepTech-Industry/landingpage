@@ -7,7 +7,7 @@ export default function RotatingGlobeVideo() {
 
       {/* ✅ VIDEO with partial opacity so background shows through */}
       <video
-        src="/assets/25550-350507943.mp4"
+        src={`${import.meta.env.BASE_URL}assets/Globe.mp4`}
         autoPlay
         muted
         loop

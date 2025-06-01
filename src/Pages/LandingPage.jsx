@@ -58,7 +58,7 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gray-950" />
         <div className="relative w-[600px] aspect-square rounded-full overflow-hidden">
           <video
-            src="./assets/Globe.mp4"
+            src={`${import.meta.env.BASE_URL}assets/Globe.mp4`}
             autoPlay
             muted
             loop
