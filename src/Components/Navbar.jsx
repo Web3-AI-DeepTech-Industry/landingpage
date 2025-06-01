@@ -7,7 +7,7 @@ export default function Navbar() {
     {/* Logo */}
     <img
       className="h-12 w-auto"
-      src="public/assets/logo.jpg"
+      src="assets/logo.jpg"
       
     />
 
